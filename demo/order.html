@@ -11,8 +11,8 @@
             crossorigin="anonymous"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
-    <link rel="stylesheet"href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 
     <style>
         .form-control-sm {
@@ -45,7 +45,6 @@
         }
 
         .split-line {
-            margin-top: 5px;
             height: 1px;
             border-bottom: 1px solid #ced4da;
         }
@@ -55,7 +54,7 @@
         }
 
         .group-pane {
-            padding: 10px;
+            padding: 10px 10px 15px 10px;
         }
 
         .group-pane-title {
@@ -64,6 +63,7 @@
             padding: 0;
             position: relative;
             font-size: 14px;
+            font-weight: bold;
         }
 
         .group-pane-title-icon {
@@ -73,7 +73,7 @@
 
         .group-pane-content {
             margin: 0;;
-            padding: 0 0 0 10px;
+            padding: 0 0 0 5px;
         }
 
         .table td {
@@ -87,104 +87,206 @@
             width: 200px;
         }
 
+        .recordTable td {
+            white-space: nowrap;
+        }
+
     </style>
 </head>
 <body>
 <div class="page">
-    <div class="group-pane">
-        <div class="group-pane-title">
-            <img class="group-pane-title-icon" src="../icons/document-text.svg"><span>基本信息</span>
-        </div>
-        <div class="group-pane-content">
-            <table>
-                <tr>
-                    <td><label class="form-label-sm">客商编码</label></td>
-                    <td><input name="ccode" style="width: 140px" type="text" placeholder="存盘后自动生成"
-                               class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm"><span
-                            class="required">*</span>客商名称</label>
-                    </td>
-                    <td colspan="3"><input autocomplete="off" name="cname" type="text"
-                                           class="form-control form-control-sm">
-                    </td>
-                </tr>
-                <tr>
-                    <td><label class="form-label-sm">客商英文名称</label></td>
-                    <td><input name="cname_en" disabled style="width: 140px" type="text"
-                               class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">状态</label></td>
-                    <td><input autocomplete="off" name="status" style="width: 140px" type="text"
-                               class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">国别地区</label></td>
-                    <td><input autocomplete="off" name="ncode" style="width: 140px" type="text"
-                               class="form-control form-control-sm"></td>
-                </tr>
-                <tr>
-                    <td><label class="form-label-sm"><span class="required">*</span>社会信用代码</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm"><span class="required">*</span>法人</label>
-                    </td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">行业类型</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                </tr>
-                <tr>
-                    <td><label class="form-label-sm">机构类型</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm"><span
-                            class="required">*</span>注册地址</label>
-                    </td>
-                    <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
-                </tr>
-                <tr>
-                    <td><label class="form-label-sm">成立时间</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">网址</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">注册资本</label></td>
-                    <td class="input-group">
-                        <input style="width: 80px" type="text" class="form-control form-control-sm">
-                        <span class="input-group-addon">万元</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label class="form-label-sm">电话</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">邮政编码</label></td>
-                    <td><input autocomplete="*" style="width: 140px" type="text" class="form-control form-control-sm">
-                    </td>
-                    <td style="text-align: right"><label class="form-label-sm">客户分类</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                </tr>
-                <tr>
-                    <td><label class="form-label-sm">企业性质</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">客商组</label></td>
-                    <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
-                </tr>
-                <tr>
-                    <td><label class="form-label-sm">属主</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">创建时间</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">创建人</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                </tr>
-                <tr>
-                    <td><label class="form-label-sm">客户来源</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">备注</label></td>
-                    <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
-                </tr>
-                <tr>
-                    <td><label class="form-label-sm">邮箱</label></td>
-                    <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
-                    <td style="text-align: right"><label class="form-label-sm">经营范围</label></td>
-                    <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
-                </tr>
-            </table>
-        </div>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <div class="group-pane">
+                    <div class="group-pane-title">
+                        <img class="group-pane-title-icon" src="../icons/document-text.svg"><span>基本信息</span>
+                    </div>
+                    <div class="group-pane-content">
+                        <table class="recordTable">
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>客商编码</label></td>
+                                <td><input name="ccode" style="width: 140px" type="text" placeholder="存盘后自动生成"
+                                           class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required">*</span>客商名称</label>
+                                </td>
+                                <td colspan="3"><input autocomplete="off" name="cname" type="text" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>客商英文名称</label></td>
+                                <td><input name="cname_en" disabled style="width: 140px" type="text"
+                                           class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>状态</label></td>
+                                <td><input autocomplete="off" name="status" style="width: 140px" type="text"
+                                           class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>国别地区</label></td>
+                                <td><input autocomplete="off" name="ncode" style="width: 140px" type="text"
+                                           class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required">*</span>社会信用代码</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required">*</span>法人</label>
+                                </td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>行业类型</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>机构类型</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span
+                                        class="required">*</span>注册地址</label>
+                                </td>
+                                <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>成立时间</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>网址</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>注册资本</label></td>
+                                <td class="input-group">
+                                    <input style="width: 80px" type="text" class="form-control form-control-sm">
+                                    <span class="input-group-addon">万元</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>电话</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>邮政编码</label></td>
+                                <td><input autocomplete="*" style="width: 140px" type="text" class="form-control form-control-sm">
+                                </td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>客户分类</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>企业性质</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>客商组</label></td>
+                                <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>属主</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>创建时间</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>创建人</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>客户来源</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>备注</label></td>
+                                <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>邮箱</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>经营范围</label></td>
+                                <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="group-pane">
+                    <div class="group-pane-title">
+                        <img class="group-pane-title-icon" src="../icons/document-text.svg"><span>基本信息</span>
+                    </div>
+                    <div class="group-pane-content">
+                        <table class="recordTable">
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>客商编码</label></td>
+                                <td><input name="ccode" style="width: 140px" type="text" placeholder="存盘后自动生成"
+                                           class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required">*</span>客商名称</label>
+                                </td>
+                                <td colspan="3"><input autocomplete="off" name="cname" type="text" class="form-control form-control-sm">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>客商英文名称</label></td>
+                                <td><input name="cname_en" disabled style="width: 140px" type="text"
+                                           class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>状态</label></td>
+                                <td><input autocomplete="off" name="status" style="width: 140px" type="text"
+                                           class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>国别地区</label></td>
+                                <td><input autocomplete="off" name="ncode" style="width: 140px" type="text"
+                                           class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required">*</span>社会信用代码</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required">*</span>法人</label>
+                                </td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>行业类型</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>机构类型</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span
+                                        class="required">*</span>注册地址</label>
+                                </td>
+                                <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>成立时间</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>网址</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>注册资本</label></td>
+                                <td class="input-group">
+                                    <input style="width: 80px" type="text" class="form-control form-control-sm">
+                                    <span class="input-group-addon">万元</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>电话</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>邮政编码</label></td>
+                                <td><input autocomplete="*" style="width: 140px" type="text" class="form-control form-control-sm">
+                                </td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>客户分类</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>企业性质</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>客商组</label></td>
+                                <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>属主</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>创建时间</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>创建人</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>客户来源</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>备注</label></td>
+                                <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                            <tr>
+                                <td><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>邮箱</label></td>
+                                <td><input style="width: 140px" type="text" class="form-control form-control-sm"></td>
+                                <td style="text-align: right"><label class="form-label-sm"><span class="required" style="visibility: hidden">*</span>经营范围</label></td>
+                                <td colspan="3"><input type="text" class="form-control form-control-sm"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
 
     <div class="split-line"></div>
 

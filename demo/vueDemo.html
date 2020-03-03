@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Demo</title>
+    <script src="../js/vue/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="xx"><el-menu
+        default-active="2"
+        class="el-menu-vertical-demo"
+        @open="handleOpen"
+        @close="handleClose"
+        background-color="#545c64"
+        text-color="#fff"
+        active-text-color="#ffd04b">
+    <el-submenu index="1">
+        <template slot="title">
+            <i class="el-icon-location"></i>
+            <span>导航一</span>
+        </template>
+        <el-menu-item-group>
+            <template slot="title">分组一</template>
+            <el-menu-item index="1-1">选项1</el-menu-item>
+            <el-menu-item index="1-2">选项2</el-menu-item>
+        </el-menu-item-group>
+        <el-menu-item-group title="分组2">
+            <el-menu-item index="1-3">选项3</el-menu-item>
+        </el-menu-item-group>
+        <el-submenu index="1-4">
+            <template slot="title">选项4</template>
+            <el-menu-item index="1-4-1">选项1</el-menu-item>
+        </el-submenu>
+    </el-submenu>
+    <el-menu-item index="2">
+        <i class="el-icon-menu"></i>
+        <span slot="title">导航二</span>
+    </el-menu-item>
+    <el-menu-item index="3" disabled>
+        <i class="el-icon-document"></i>
+        <span slot="title">导航三</span>
+    </el-menu-item>
+    <el-menu-item index="4">
+        <i class="el-icon-setting"></i>
+        <span slot="title">导航四</span>
+    </el-menu-item>
+</el-menu>
+    <div style="width: 140px">
+        <div class="block">
+            <el-date-picker
+                    size="mini"
+                    v-model="mData.bar"
+                    type="date"
+                    placeholder="选择日期">
+            </el-date-picker>
+        </div>
+        <el-input
+                size="mini"
+                placeholder="请输入内容"
+                suffix-icon="el-icon-date"
+                v-model="mData.bar">
+        </el-input>
+    </div>
+    <p>Message is: {{ mData.bar }}</p>
+    <table style="border: 1px solid #fff; border-collapse: collapse">
+        <tr v-for="row in gData">
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+        </tr>
+        <button type="button" v-on:click="addRow()">添加行</button>
+    </table>
+    <div class="block">
+        <el-pagination
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+                :current-page="currentPage4"
+                :page-sizes="[100, 200, 300, 400]"
+                :page-size="100"
+                layout="total, sizes, prev, pager, next, jumper"
+                :total="400">
+        </el-pagination>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript">
+    let data = {
+        currentPage1: 5,
+        currentPage2: 5,
+        currentPage3: 5,
+        currentPage4: 4
+    };
+    data.mData = {bar: 1};
+    data.gTable = ["a", "b", "c"];
+    data.gData = [
+        ['aaa1', 1, 'bbb1'],
+        ['aaa2', 2, 'bbb2'],
+        ['aaa3', 3, 'bbb3']
+    ];
+
+    // 该对象被加入到一个 Vue 实例中
+    let vm = new Vue({
+        el: '#xx',
+        data: data,
+        methods: {
+            addRow: function (event) {
+                this.mData.bar = this.mData.bar + 1;
+            },
+            handleSizeChange(val) {
+                console.log(`每页 ${val} 条`);
+            },
+            handleCurrentChange(val) {
+                console.log(`当前页: ${val}`);
+            }
+        }
+    })
+</script>
+</html>

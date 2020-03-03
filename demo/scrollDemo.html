@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style type="text/css">
+        table, th, td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+        }
+
+        table {
+            table-layout: fixed;
+        }
+
+        thead th {
+            text-align: center;
+        }
+
+        tr td {
+            white-space: nowrap;
+            width: 100px;
+            height: 20px;
+        }
+
+        tr th {
+            white-space: nowrap;
+            width: 100px;
+            height: 20px;
+        }
+
+        .table {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .fix {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .fix-thead {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .head {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #f3faff;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            let tbody = document.getElementById("tbody");
+            let thead = document.getElementById("thead");
+            let fix = document.getElementById("fix");
+
+            thead.style.width = tbody.clientWidth + "px";
+
+            fix.style.height = tbody.clientHeight + "px";
+
+            tbody.onscroll = function () {
+                thead.scrollLeft = tbody.scrollLeft;
+                fix.scrollTop = tbody.scrollTop;
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <div id="tbody" class="table" style="height: 200px; overflow: scroll; width: 600px">
+        <table width="800px">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>性别</th>
+                <th>性别</th>
+                <th>性别</th>
+                <th>性别</th>
+                <th>性别</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+                <td>性别</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="thead" class="head" style="overflow: hidden">
+        <table style="width: 800px">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>性别</th>
+                <th>性别</th>
+                <th>性别</th>
+                <th>性别</th>
+                <th>性别</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div id="fix" class="fix" style="background-color: white; overflow: hidden;">
+        <table style="width: 200px">
+            <thead style="background-color: #f3faff">
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="fix-thead" class="fix-thead" style="background-color: white;">
+        <table style="width: 200px;  background-color: #f3faff">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</body>
+</html>

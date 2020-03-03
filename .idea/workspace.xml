@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b47195b-f94d-4ddd-b177-3dac64fbb4ac" name="Default Changelist" comment="" />
+    <list default="true" id="8b47195b-f94d-4ddd-b177-3dac64fbb4ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/order.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +20,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1WdmokevbF9trRH7bm57kgb1Qbx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,8 +32,9 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js/vue" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -34,6 +44,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WorkSpace\test\hAdmin\js\vue" />
       <recent name="D:\WorkSpace\test\hAdmin" />
       <recent name="D:\WorkSpace\test\hAdmin\js" />
       <recent name="D:\WorkSpace\test\hAdmin\css" />
@@ -62,6 +73,11 @@
       <option name="presentableId" value="Default" />
       <updated>1579488022821</updated>
       <workItem from="1579488023907" duration="18099000" />
+      <workItem from="1580715087107" duration="204000" />
+      <workItem from="1581580919176" duration="6781000" />
+      <workItem from="1582012386529" duration="2040000" />
+      <workItem from="1583129586239" duration="7397000" />
+      <workItem from="1583144771929" duration="12943000" />
     </task>
     <servers />
   </component>
@@ -69,6 +85,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="362" y="79" key="#Inspections" timestamp="1583135514130">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="362" y="79" key="#Inspections/0.0.1536.834@0.0.1536.834" timestamp="1583135514130" />
+    <state x="362" y="79" key="#Intentions" timestamp="1583135357987">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="362" y="79" key="#Intentions/0.0.1536.834@0.0.1536.834" timestamp="1583135357987" />
     <state x="487" y="226" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579488135399">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
